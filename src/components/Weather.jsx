@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './weather.css'
-import { useState } from 'react'
 import DisplayWeather from './DisplayWeather'
 
 
@@ -79,13 +78,11 @@ function Weather() {
                 </button>
             </form>
 
-            {
-                weather.data !== undefined ? (
-                    <div>
-                        <DisplayWeather data={weather.data} />
-                    </div>
-                ) : null
-            }
+            {weather.data !== undefined ? (
+                <div>
+                    <DisplayWeather data={weather.data} />
+                </div>
+            ) : null}
         </div>
     )
 }
