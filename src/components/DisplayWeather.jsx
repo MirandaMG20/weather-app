@@ -31,6 +31,7 @@ function DisplayWeather({ data }) {
             </div>
 
             <div className="weatherdetails">
+                
                 <div className="section1">
                     <table>
                         <tr>
@@ -69,6 +70,46 @@ function DisplayWeather({ data }) {
                             </td>
                         </tr>
                     </table>
+
+                    <div className="section2">
+                        <table>
+                            <tr>
+                                <td>
+                                    <h4>Wind</h4>
+                                </td>
+                                <td>
+                                    <span>
+                                        <span>{Math.floor((data.wind.speed * 18) / 5)} Km/hr </span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Wind Direction</h4>
+                                </td>
+                                <td>
+                                    <span>{data.wind.deg}<sup>o</sup> deg </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Sunrise</h4>
+                                </td>
+                                <td>
+                                    <span>{new Date(data.sys.sunrise * 1000).toLocaleTimeString()}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Sunset</h4>
+                                </td>
+                                <td>
+                                    <span>{new Date(data.sys.sunset * 1000).toLocaleTimeString()}</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>

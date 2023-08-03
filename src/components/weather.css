@@ -5,6 +5,7 @@
     padding-bottom: 30px;
     width: max-content;
     padding: 0px 20px 20px 20px;
+   
   }
   .weather .title {
     font-size: 4rem;
@@ -36,6 +37,7 @@
     background: rgb(2, 57, 88, 0.8);
     cursor: pointer;
     color: whitesmoke;
+   
   }
   
   .weather .getweather:hover {
