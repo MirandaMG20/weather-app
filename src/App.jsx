@@ -5,7 +5,7 @@ import Weather from "./components/Weather"
 // Example of API call: api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=60494e187a0dce359ddb7c25f0ba90c3
 
 function App() {
-  const apiKey = '60494e187a0dce359ddb7c25f0ba90c3'
+  
   return (
     <>
       <Weather />
