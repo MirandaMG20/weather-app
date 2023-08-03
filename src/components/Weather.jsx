@@ -1,6 +1,7 @@
 import React from 'react'
 import './weather.css'
 import { useState } from 'react'
+import DisplayWeather from './DisplayWeather'
 
 
 function Weather() {
@@ -24,10 +25,10 @@ function Weather() {
             alert('Add Values')
         } else {
             // making the api call 
-            const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`)
-            const res = await data.json()
-            // console.log(res)
-            setWeather(res)
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`)
+            const data = await res.json()
+            // console.log(data)
+            setWeather({ data: data })
         }
     }
 
@@ -78,6 +79,13 @@ function Weather() {
                 </button>
             </form>
 
+            {
+                weather.data !== undefined ? (
+                    <div>
+                        <DisplayWeather data={weather.data} />
+                    </div>
+                ) : null
+            }
         </div>
     )
 }
