@@ -31,8 +31,8 @@
   }
   .displayweather h1 {
     font-size: 5rem;
-    /* margin: -10px; */
-    /* margin-left: -150px; */
+    /* margin: 10px;
+    margin-left: 150px; */
   }
   
   .displayweather .weather-icon {
