@@ -13,7 +13,7 @@ function Weather() {
 
     const [weather, setWeather] = useState([])
 
-    const APIKEY = '60494e187a0dce359ddb7c25f0ba90c3';
+    const APIKEY = import.meta.env.VITE_API_KEY;
 
     //Fetching Weather Data
     // OR this function const weatherData = async() => { }
