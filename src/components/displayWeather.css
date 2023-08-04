@@ -32,23 +32,23 @@
 
 .displayweather h1 {
   font-size: 5rem;
-  /* margin: 10px;
-    margin-left: 150px; */
+  margin: 10px;
+  margin-left: -150px;
 }
 
 .displayweather .weather-icon {
-  width: 100px;
-
   top: 50px;
+  right: 50px;
+  width: 100px;
+  border-radius: 50%;
+  background-color: currentColor;
   position: absolute;
-
 }
 
 .displayweather .weather-main {
   position: absolute;
-
-  top: 120px;
-  left: 310px;
+  top: 170px;
+  left: 470px;
   font-weight: 500;
   font-size: 1.2rem;
 }

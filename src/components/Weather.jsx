@@ -23,11 +23,15 @@ function Weather() {
         if (form.city == '') {
             alert('Add Values')
         } else {
-            // making the api call 
-            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`)
-            const data = await res.json()
-            // console.log(data)
-            setWeather({ data: data })
+            try {
+                // making the api call
+                const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`)
+                const data = await res.json()
+                // console.log(data)
+                setWeather({ data: data })
+            } catch (error) {
+                console.log(error)
+            }
         }
     }
 
@@ -82,7 +86,7 @@ function Weather() {
                 <div>
                     <DisplayWeather data={weather.data} />
                 </div>
-            ) : null}
+            ) : <h2>Data not found...</h2>}
         </div>
     )
 }

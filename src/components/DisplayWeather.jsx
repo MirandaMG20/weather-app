@@ -3,9 +3,9 @@ import './displayWeather.css'
 
 
 function DisplayWeather({ data }) {
-    // console.log(data)
+    console.log(data)
 
-    const iconurl = "https://openweathermap.org/img/wn/" + `${data.cod !== 404 ? data.weather[0].icon : null}` + ".png";
+    const iconurl = `https://openweathermap.org/img/wn/${data.cod !== 404 ? data.weather[0].icon : null}.png`;
 
     return (
         <div className='displayweather'>
@@ -19,11 +19,11 @@ function DisplayWeather({ data }) {
                             As of {new Date().toLocaleTimeString()}
                         </span>
                         <h1>
-                            {Math.floor((data.main.temp_max - 273.15) * 1.8) + 32}<sup>o</sup>/
-                            {Math.floor((data.main.temp_min - 273.15) * 1.8) + 32}<sup>o</sup>
+                            {Math.floor((data.main.temp_max - 273.15) * 1.8) + 32}/
+                            {Math.floor((data.main.temp_min - 273.15) * 1.8) + 32} &#176;F
                         </h1>
                         <span className="weather-main">{data.weather[0].main}</span>
-                        <img src={iconurl} className='weather-icon' alt='' />
+                        <img src={iconurl} className='weather-icon' alt='weather image' />
                         <span className="weather-description">
                             {data.weather[0].description}
                         </span>
@@ -38,8 +38,8 @@ function DisplayWeather({ data }) {
                                     </td>
                                     <td>
                                         <span>
-                                            {Math.floor((data.main.temp_max - 273.15) * 1.8) + 32}<sup>o</sup>/ {" "}
-                                            {Math.floor((data.main.temp_min - 273.15) * 1.8) + 32}<sup>o</sup> F
+                                            {Math.floor((data.main.temp_max - 273.15) * 1.8) + 32}/{" "}
+                                            {Math.floor((data.main.temp_min - 273.15) * 1.8) + 32} °F
                                         </span>
                                     </td>
                                 </tr>
@@ -48,7 +48,7 @@ function DisplayWeather({ data }) {
                                         <h4>Humidity</h4>
                                     </td>
                                     <td>
-                                        <span>{data.main.humidity} % </span>
+                                        <span>{data.main.humidity}%</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -56,7 +56,7 @@ function DisplayWeather({ data }) {
                                         <h4>Pressure</h4>
                                     </td>
                                     <td>
-                                        <span>{data.main.pressure} hPa </span>
+                                        <span>{data.main.pressure} hPa</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -64,7 +64,7 @@ function DisplayWeather({ data }) {
                                         <h4>Visibility</h4>
                                     </td>
                                     <td>
-                                        <span>{data.visibility / 1000} Km </span>
+                                        <span>{data.visibility / 1000} Km</span>
                                     </td>
                                 </tr>
                             </table>
@@ -77,7 +77,7 @@ function DisplayWeather({ data }) {
                                         </td>
                                         <td>
                                             <span>
-                                                <span>{Math.floor((data.wind.speed * 18) / 5)} Km/hr </span>
+                                                <span>{Math.floor((data.wind.speed * 18) / 5)} Km/hr</span>
                                             </span>
                                         </td>
                                     </tr>
@@ -86,7 +86,7 @@ function DisplayWeather({ data }) {
                                             <h4>Wind Direction</h4>
                                         </td>
                                         <td>
-                                            <span>{data.wind.deg}<sup>o</sup> deg </span>
+                                            <span>{data.wind.deg}°deg</span>
                                         </td>
                                     </tr>
                                     <tr>
