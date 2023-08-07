@@ -86,7 +86,7 @@ function Weather() {
                 <div>
                     <DisplayWeather data={weather.data} />
                 </div>
-            ) : <h2>Data not found...</h2>}
+            ) : null}
         </div>
     )
 }
